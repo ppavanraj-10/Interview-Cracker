@@ -38,7 +38,7 @@ main{
     }
 
     a{
-        color: #e1034d;
+        color: var(--accent);
         text-decoration: none;
     }
 }

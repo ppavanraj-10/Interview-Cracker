@@ -31,6 +31,14 @@ interviewRouter.get("/", authMiddleware.authUser, interviewController.getAllInte
 
 
 /**
+ * @route DELETE /api/interview/:interviewId
+ * @description delete an interview report by id.
+ * @access private
+ */
+interviewRouter.delete("/:interviewId", authMiddleware.authUser, interviewController.deleteInterviewReportController)
+
+
+/**
  * @route GET /api/interview/resume/pdf
  * @description generate resume pdf on the basis of user self description, resume content and job description.
  * @access private

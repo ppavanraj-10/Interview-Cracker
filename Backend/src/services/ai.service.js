@@ -39,6 +39,13 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
                         Resume: ${resume}
                         Self Description: ${selfDescription}
                         Job Description: ${jobDescription}
+
+                        Requirements:
+                        1. Provide exactly 10 technical questions.
+                        2. Provide exactly 10 behavioral questions.
+                        3. For each question, include the interviewer intention and the best way to answer it.
+                        4. Return only valid JSON matching the schema with fields: matchScore, technicalQuestions, behavioralQuestions, skillGaps, preparationPlan, title.
+                        5. Do not include any extra explanation outside the JSON object.
 `
 
     const response = await ai.models.generateContent({

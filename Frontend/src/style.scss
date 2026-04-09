@@ -1,5 +1,96 @@
 @use "./style/button.scss";
 
+// ── Theme Variables ───────────────────────────────────────────────────────────
+// Dark theme colors
+$dark-bg-page: #0d1117;
+$dark-bg-card: #161b22;
+$dark-bg-panel: #1c2230;
+$dark-bg-input: #1e2535;
+$dark-border-color: #2a3348;
+$dark-text-primary: #e6edf3;
+$dark-text-muted: #7d8590;
+$dark-accent: #ff2d78;
+$dark-accent-alt: #ff6b9d;
+$dark-badge-required: #ff2d78;
+$dark-badge-best: #ff2d78;
+$dark-info-bg: #1b2a4a;
+$dark-info-border: #2d4a7a;
+
+// Light theme colors
+$light-bg-page: #ffffff;
+$light-bg-card: #f6f8fa;
+$light-bg-panel: #ffffff;
+$light-bg-input: #ffffff;
+$light-border-color: #d1d9e0;
+$light-text-primary: #24292f;
+$light-text-muted: #656d76;
+$light-accent: #d73a49;
+$light-accent-alt: #b31d28;
+$light-badge-required: #d73a49;
+$light-badge-best: #d73a49;
+$light-info-bg: #ddf4ff;
+$light-info-border: #79c0ff;
+
+:root {
+  --bg-page: #{$dark-bg-page};
+  --bg-card: #{$dark-bg-card};
+  --bg-panel: #{$dark-bg-panel};
+  --bg-input: #{$dark-bg-input};
+  --border-color: #{$dark-border-color};
+  --border-color-light: #{lighten($dark-border-color, 8%)};
+  --text-primary: #{$dark-text-primary};
+  --text-muted: #{$dark-text-muted};
+  --text-muted-light-15: #{lighten($dark-text-muted, 15%)};
+  --text-muted-light-12: #{lighten($dark-text-muted, 12%)};
+  --accent: #{$dark-accent};
+  --accent-dark-10: #{darken($dark-accent, 10%)};
+  --accent-alt: #{$dark-accent-alt};
+  --badge-required: #{$dark-badge-required};
+  --badge-best: #{$dark-badge-best};
+  --info-bg: #{$dark-info-bg};
+  --info-border: #{$dark-info-border};
+}
+
+.light-theme {
+  --bg-page: #{$light-bg-page};
+  --bg-card: #{$light-bg-card};
+  --bg-panel: #{$light-bg-panel};
+  --bg-input: #{$light-bg-input};
+  --border-color: #{$light-border-color};
+  --border-color-light: #{lighten($light-border-color, 8%)};
+  --text-primary: #{$light-text-primary};
+  --text-muted: #{$light-text-muted};
+  --text-muted-light-15: #{lighten($light-text-muted, 15%)};
+  --text-muted-light-12: #{lighten($light-text-muted, 12%)};
+  --accent: #{$light-accent};
+  --accent-dark-10: #{darken($light-accent, 10%)};
+  --accent-alt: #{$light-accent-alt};
+  --badge-required: #{$light-badge-required};
+  --badge-best: #{$light-badge-best};
+  --info-bg: #{$light-info-bg};
+  --info-border: #{$light-info-border};
+}
+
+.dark-theme {
+  --bg-page: #{$dark-bg-page};
+  --bg-card: #{$dark-bg-card};
+  --bg-panel: #{$dark-bg-panel};
+  --bg-input: #{$dark-bg-input};
+  --border-color: #{$dark-border-color};
+  --border-color-light: #{lighten($dark-border-color, 8%)};
+  --text-primary: #{$dark-text-primary};
+  --text-muted: #{$dark-text-muted};
+  --text-muted-light-15: #{lighten($dark-text-muted, 15%)};
+  --text-muted-light-12: #{lighten($dark-text-muted, 12%)};
+  --accent: #{$dark-accent};
+  --accent-dark-10: #{darken($dark-accent, 10%)};
+  --accent-alt: #{$dark-accent-alt};
+  --badge-required: #{$dark-badge-required};
+  --badge-best: #{$dark-badge-best};
+  --info-bg: #{$dark-info-bg};
+  --info-border: #{$dark-info-border};
+}
+
 * {
     margin: 0%;
     padding: 0%;
@@ -10,11 +101,23 @@ html,
 body,
 #root {
     width: 100%;
-    background-color: #161616;
-    color: whitesmoke;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: default;
+    user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input, textarea {
+    cursor: text;
+    user-select: text;
+}
+
+button, .button {
+    cursor: pointer;
 }
 
 .highlight{
-    color: #d20d3b;
+    color: var(--accent);
 }
