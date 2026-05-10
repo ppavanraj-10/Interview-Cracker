@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 const api = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://interview-cracker-jxc2.onrender.com",
     withCredentials: true
 })
 
@@ -46,9 +46,7 @@ export async function logout() {
 
         return response.data
 
-    } catch (err) {
-
-    }
+    } catch { /* empty */ }
 }
 
 export async function getMe() {
